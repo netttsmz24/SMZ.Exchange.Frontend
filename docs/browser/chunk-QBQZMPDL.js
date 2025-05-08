@@ -1,0 +1,1 @@
+import{Eb as e,Fa as i,P as t}from"./chunk-7FFTT4OB.js";var r=class o{static \u0275fac=function(m){return new(m||o)};static \u0275mod=i({type:o});static \u0275inj=t({imports:[e]})};export{r as RemittanceModule};
