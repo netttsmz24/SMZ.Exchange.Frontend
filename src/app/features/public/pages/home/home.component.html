@@ -1,0 +1,87 @@
+<div class="wrapper">
+    <div id="body" class="active">
+        <div class="content bg-white">
+           <div class="container-fluid">
+                <div>
+                    <div style="display: flex; justify-content: center;">
+                        <a [routerLink]="[appRoutes.APP_HOME]">
+                            <img class="img-fluid col-md-7" src="assets/images/new-smz-logo.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+        <div class="content" style="margin:0 -10px; border-top: 7px solid #fb852d;">
+            <div class="container-fluid">
+                <div class="cash-exchange">
+                    <marquee>
+                        <ul>
+                            <li> Cash Exchange Rates </li>
+                            <li> Cash Exchange Rates </li>
+                            <li> Cash Exchange Rates </li>
+                            <li> Cash Exchange Rates </li>
+                            <li> Cash Exchange Rates </li>
+                        </ul>
+                    </marquee>
+                </div>
+                <div class="tr-cross-scrtips">
+                    <div class="tr-cross-scrtips--one" style=" border-top: 7px solid #fb852d;">
+                        <marquee>
+                            <ul class="" style="display: flex;">
+                                <li style="display: flex;" *ngFor="let rate of cashRates">
+                                    {{rate.currencyCode}}
+                                    <span><sup>We Buy</sup></span> {{ rate.buyRate}}
+                                    <span><sup>We Sell</sup></span> {{ rate.sellRate }}
+                                </li>
+                            </ul>
+                        </marquee>
+                    </div>
+                    <div class="tr-cross-scrtips--one"
+                        style=" border-top: 7px solid #fb852d; border-bottom: 7px solid #fb852d; ">
+                        <marquee >
+                            <ul class="" style="display: flex;" *ngIf="remittanceRates.length>0">
+                                <li *ngFor="let rate of remittanceRates" style="display: flex;">
+                                    {{rate.currencyCode}}
+                                    <span><sup>We Buy</sup></span> {{ rate.buyRate}}
+                                    <span><sup>We Sell</sup></span> {{ rate.sellRate }}
+                                </li>
+                            </ul>
+                        </marquee>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="cash-exchange">
+                    <marquee>
+                        <ul>
+                            <li> Remittance & Settlement Rates </li>
+                            <li> Remittance & Settlement Rates </li>
+                            <li> Remittance & Settlement Rates </li>
+                            <li> Remittance & Settlement Rates </li>
+                        </ul>
+                    </marquee>
+                </div>
+            </div>
+        </div>
+        <footer class="orange-bg">
+            <div class="content" style="margin:0">
+                <div class="container-fluid">
+                    <div class="competitive-rates-section pt-5">
+                        <div style="height:110px"> &nbsp; </div>
+                        <h1> Check Our Competitive Rates - <a [routerLink]="['/', appRoutes.APP_EXCHANGE_RATES]"> Click
+                                Here
+                                to Check &
+                                Transact </a>
+                        </h1>
+                        <h2> We are Regulated By Central Bank - About Us & Contact Us -
+                            <a [routerLink]="['/',appRoutes.APP_ABOUT_US]"> Click Here To Check </a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

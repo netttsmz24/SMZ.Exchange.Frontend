@@ -1,0 +1,28 @@
+.Header-Cell .ag-header-cell-text {
+    text-transform: uppercase !important;
+}
+
+.ag-header-cell-text {
+    /* color: #1b1b1b; */
+    color: red !important;
+    text-transform: uppercase;
+}
+
+.ag-theme-alpine .ag-header-cell {
+    font-size: 38px !important;
+}
+
+.ag-root-wrapper {
+    border-radius: 0px !important;
+}
+
+ag-grid-angular.ag-theme-quartz .ag-header-row .ag-header-cell:last-child {
+    border-right: none !important;
+    background-color: red !important;
+    /* just to test if it applies */
+}
+
+.ag-theme-quartz .ag-header-row .ag-header-cell:last-child {
+    border-right: none !important;
+}
+

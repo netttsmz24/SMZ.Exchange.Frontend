@@ -1,0 +1,23 @@
+<div *ngIf="show" id="myModal" class="modal fade show" role="dialog" style="display: block; padding-right: 15px;">
+    <div class="modal-dialog modal-lg" style="margin: 10% auto;">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header" style="display:block;">
+                <h5 class="modal-title">
+                    <div class="content-center"> <b>{{title}}</b></div>
+                </h5>
+            </div>
+            <!-- Modal body -->
+            <div class="message-try">
+                <ng-content></ng-content>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer pb-3" style="display:block;">
+                <div class="content-center">
+                    <button (click)="this.onClose()" type="button" class="btn btn-success">{{buttonText}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop show" *ngIf="show"></div>

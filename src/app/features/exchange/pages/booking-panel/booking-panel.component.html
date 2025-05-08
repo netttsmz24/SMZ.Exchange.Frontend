@@ -1,0 +1,64 @@
+<app-client-header></app-client-header>
+<main>
+    <div class="container">
+        <div class="transaction-pmt">
+            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-one-tab" data-bs-toggle="pill" data-bs-target="#tabOne"
+                        type="button" role="tab" aria-controls="pills-home" aria-selected="true">Calculate Amnts ❶
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-two-tab" data-bs-toggle="pill" data-bs-target="#tabTwo"
+                        type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Categorization ❷
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-three-tab" data-bs-toggle="pill" data-bs-target="#tabThree"
+                        type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Simplified KYC ❸
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-four-tab" data-bs-toggle="pill" data-bs-target="#tabFour"
+                        type="button" role="tab" aria-controls="pills-profile" aria-selected="false">INVOICE ❹ </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-five-tab" data-bs-toggle="pill" data-bs-target="#tabFive"
+                        type="button" role="tab" aria-controls="pills-contact" aria-selected="false">PAYMENTS ❺
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-six-tab" data-bs-toggle="pill" data-bs-target="#tabSix"
+                        type="button" role="tab" aria-controls="pills-contact" aria-selected="false">COLLECTION ❻
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="tabOne" role="tabpanel" aria-labelledby="pills-home-tab"
+                    tabindex="0">
+                    <app-exchange-panel [ExchangeRates]="CashExchangeRates" [CurrencyList]="CurrencyList"
+                        (exchangeData)="onExchangeFormSubmit($event)"></app-exchange-panel>
+                </div>
+                <div class="tab-pane fade" id="tabTwo" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                    Tab content 02
+                </div>
+                <div class="tab-pane fade" id="tabThree" role="tabpanel" aria-labelledby="pills-contact-tab"
+                    tabindex="0">
+                    Tab content 03
+                </div>
+                <div class="tab-pane fade" id="tabFour" role="tabpanel" aria-labelledby="pills-contact-tab"
+                    tabindex="0">
+                    Tab content 04
+                </div>
+                <div class="tab-pane fade" id="tabFive" role="tabpanel" aria-labelledby="pills-contact-tab"
+                    tabindex="0">
+                    Tab content 05
+                </div>
+                <div class="tab-pane fade" id="tabSix" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                    Tab content 06
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<app-disclaimer-footer></app-disclaimer-footer>

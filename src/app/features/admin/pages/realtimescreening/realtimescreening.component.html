@@ -1,0 +1,20 @@
+<div class="content">
+    <div class="container-fluid mt-3">
+        <div class="container-section">
+            <div class="col-md-12 col-lg-12">
+                <div class="page-title">
+                    <span>Real Time Screening</span>
+                </div>
+                <div class="table-section">
+                    <ag-grid-angular [theme]="theme" [rowData]="rowData" [columnDefs]="cashColumnDefs"
+                        [defaultColDef]="defaultColDef" domLayout="autoHeight"
+                        [overlayLoadingTemplate]="overlayLoadingTemplate"
+                        [overlayNoRowsTemplate]="overlayNoRowsTemplate" (gridReady)="onCashGridReady($event)"
+                        [suppressCellFocus]="true" [pagination]="pagination" [paginationPageSize]="paginationPageSize"
+                        [paginationPageSizeSelector]="paginationPageSizeSelector">
+                    </ag-grid-angular>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

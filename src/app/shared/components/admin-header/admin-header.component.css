@@ -1,0 +1,36 @@
+.header-options {
+    display: flex;
+    justify-content: end;
+    justify-items: center;
+    align-items: center;
+    /* padding-right: 0px; */
+}
+
+.header-options ul {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.header-options .user-profile {
+    color: inherit;
+}
+
+.header-options .user-profile .user-profile-text {
+    font-size: 18px;
+}
+
+.header-options .user-profile .user-profile-text .user-name {
+    color: black;
+}
+
+.navigation-links {
+    display: flex;
+    gap: 8px;
+}
+
+.home-link a {
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+}

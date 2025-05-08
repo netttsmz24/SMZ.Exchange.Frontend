@@ -1,0 +1,47 @@
+@media only screen and (min-width:768px) and (max-width:920px) {
+    html {
+        background-color: #fb852d;
+    }
+}
+.logo-header-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  background-color: white; /* Optional: match header color */
+}
+
+.logo-img {
+  width: 250px; 
+  height: auto;
+  object-fit: contain;
+}
+
+/* Container hides overflow */
+.marquee {
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+  }
+  
+  /* Make the <li>s inline-block so they scroll horizontally */
+  .marquee li {
+    /* display: inline-block; */
+    margin-right: 2rem;  /* spacing between items */
+  }
+  
+  /* Apply the scrolling animation */
+  .marquee.marque-left {
+    animation: scroll-left 30s linear infinite;
+  }
+  
+  /* Keyframes: move from right (100%) to left (-100%) */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  

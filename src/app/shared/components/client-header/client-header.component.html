@@ -1,0 +1,49 @@
+<header class="page-headr">
+    <nav class="navbar-expand-lg navbar-white bg-white">
+        <div class="row">
+            <div class="col-md-6" (click)="this.navigationService.navigateHome()">
+                <img class="img-fluid mx-auto d-block pb-2 mt-2" src="assets/images/new-smz-logo.png">
+            </div>
+            <div class="col-md-6">
+                <ul class="navbar-nav ms-auto" style="float:right;">
+                    <li>
+                        <div class="home-icon">
+                            <h6 class="mt-1"> WELCOME {{ userProfile.userName || 'GUEST' | titlecase }}</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="home-icon">
+                            <a class="icon" title="Back" (click)="this.navigationService.goBack()"> <i
+                                    class="fas fa-arrow-alt-circle-left fs-5"></i></a>
+                            <a class="icon" title="Forward" (click)="this.navigationService.goForward()"> <i
+                                    class="fas fa-arrow-alt-circle-right fs-5"></i></a>
+                            <a class="icon" title="home" (click)="this.navigationService.navigateClientDashboard()">
+                                <i class="fas fa-home fs-5"></i>
+                            </a>
+                            <a class="icon" (click)="logout()">
+                                <i class='fas fa-sign-out-alt' style='font-size:18px'></i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="col">
+                    <table style="float:right;">
+                        <tr>
+                            <td>
+                                <a [routerLink]="['/', appRoutes.USER_BASEROUTE, appRoutes.USER_ACTIVITIES]"
+                                    class="btn btn-profile">Profile</a>
+                            </td>
+                            <td><a [routerLink]="['/', appRoutes.USER_BASEROUTE, appRoutes.USER_ACTIVITIES]"
+                                    class="btn btn-activity">Activity</a>
+                            </td>
+                            <td><a [routerLink]="['/', appRoutes.USER_BASEROUTE, appRoutes.USER_NOTIFICATIONS]"
+                                    class="btn btn-bulletin">Bulletin POP-UPS
+                                    <span>Notifications</span></a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

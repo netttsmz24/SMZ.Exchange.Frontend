@@ -1,0 +1,154 @@
+/* You can add global styles to this file, and also import other style files */
+a {
+    text-decoration: none !important;
+}
+
+/* ################## AG GRID TABLE STYLES */
+
+/* BULK SCREEN TABLE */
+
+.bs-ag-firstHeader {
+    background-color: yellow;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.bs-ag-firstHeader-subheader {
+    background-color: yellow;
+    font-size: 16px;
+    font-weight: medium;
+}
+
+.bs-ag-secondHeader {
+    background-color: #d9e1f2;
+}
+
+.bs-ag-secondHeader .ag-header-cell-comp-wrapper {
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.bs-ag-secondHeader-subheader-1 {
+    background-color: white;
+}
+
+.bs-ag-secondHeader-subheader-1 .ag-header-cell-comp-wrapper {
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: bold;
+    color: #002060;
+}
+
+.bs-ag-secondHeader-subheader-2 {
+    background-color: #d9e1f2;
+}
+
+.bs-ag-secondHeader-subheader-2 .ag-header-cell-comp-wrapper {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: medium;
+}
+
+.bs-ag-fourthHeader {
+    background-color: white;
+}
+
+.bs-ag-fourthHeader .ag-header-cell-comp-wrapper {
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: bold;
+    color: red;
+}
+
+.bs-ag-fourthHeader-subheader-1 {
+    background-color: white;
+}
+
+.bs-ag-fourthHeader-subheader-1 .ag-header-cell-comp-wrapper {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: medium;
+    color: red;
+}
+
+.bs-ag-firstHeader-subheader2 .ag-header-cell-comp-wrapper {
+    color: #002060;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: medium;
+}
+
+.bs-ag-matrixHeader {
+    background-color: white;
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
+}
+
+.bs-ag-matrixHeader .ag-header-cell-comp-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.bs-ag-matrixHeader-subheader {
+    background-color: white;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.bs-ag-matrixHeader-subheader1 {
+    background-color: white;
+    font-size: 16px;
+    font-weight: medium;
+    color: #002060;
+}
+
+.bs-ag-riskHeader {
+    background-color: white;
+    font-size: 17px;
+    font-weight: bold;
+    color: #002060;
+}
+
+.bs-ag-riskHeader .ag-header-cell-comp-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.bs-ag-riskHeader-subHeader {
+    background-color: white;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.bs-ag-riskHeader-subHeader .ag-header-cell-comp-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.bs-ag-riskHeader-subHeader1 {
+    background-color: white;
+    font-size: 16px;
+    font-weight: medium;
+    color: #002060;
+}
+
+.bs-ag-commonCellStyle {
+    font-weight: 500;
+}
+
+
+
+
+
+
+/* ################## AG GRID TABLE STYLES END*/

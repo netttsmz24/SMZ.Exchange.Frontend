@@ -1,0 +1,78 @@
+<div class="content">
+    <div class="container-fluid mt-3">
+        <div class="container-section">
+            <div class="col-md-12 col-lg-12">
+                <div class="form-section">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <div class="row">
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-6 col-xl-6 col-xxl-4">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon3">From Date</span>
+                                        <input type="date" class="form-control" id="basic-url"
+                                            aria-describedby="basic-addon3" [value]="currentDate">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-6 col-xl-6 col-xxl-4">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon3">To Date</span>
+                                        <input type="date" class="form-control" id="basic-url"
+                                            aria-describedby="basic-addon3" [value]="currentDate">
+                                    </div>
+                                </div> 
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-6 col-xl-5 col-xxl-4">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon3">Total Count</span>
+                                        <input type="text" value="130" class="form-control" id="basic-url"
+                                            aria-describedby="basic-addon3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon3">UNSCR Updated Latest</span>
+                                        <input type="date" class="form-control" id="basic-url"
+                                            aria-describedby="basic-addon3" [value]="currentDate">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon3">MOHA Updated Latest</span>
+                                        <input type="date" class="form-control" id="basic-url"
+                                            aria-describedby="basic-addon3" [value]="currentDate">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon3">OFAC Updated Latest</span>
+                                        <input type="date" class="form-control" id="basic-url"
+                                            aria-describedby="basic-addon3" [value]="currentDate">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon3">PEPS Updated Latest</span>
+                                        <input type="date" class="form-control" id="basic-url"
+                                            aria-describedby="basic-addon3" [value]="currentDate">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-section">
+                    <ag-grid-angular [theme]="theme" [rowData]="rowData" [columnDefs]="cashColumnDefs"
+                        [defaultColDef]="defaultColDef" domLayout="autoHeight"
+                        [overlayLoadingTemplate]="overlayLoadingTemplate"
+                        [overlayNoRowsTemplate]="overlayNoRowsTemplate" (gridReady)="onCashGridReady($event)"
+                        [suppressCellFocus]="true" [pagination]="pagination" [paginationPageSize]="paginationPageSize"
+                        [paginationPageSizeSelector]="paginationPageSizeSelector">
+                    </ag-grid-angular>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

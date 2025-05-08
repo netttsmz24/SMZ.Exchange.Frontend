@@ -1,0 +1,29 @@
+<header class="page-headr">
+    <nav class="navbar-expand-lg navbar-white bg-white">
+        <div class="row">
+            <div class="col-md-6" (click)="this.navigationService.navigateToAdminHome()">
+                <img class="img-fluid mx-auto d-block pb-2 mt-2" src="assets/images/new-smz-logo.png">
+            </div>
+            <div class="col-md-6 header-options">
+                <ul class="navbar-nav ms-auto" style="float:right;">
+                    <li class="user-profile">
+                        <span class="user-profile-text"> WELCOME
+                            <span class="user-name">Guest</span>
+                        </span>
+                    </li>
+                    <li class="navigation-links">
+                        <a (click)="this.navigationService.goBack()" title="Back">
+                            <img src="assets/images/red-left-arrow.png">
+                        </a>
+                        <a (click)="this.navigationService.goForward()" class="icon" title="Forward">
+                            <img src="assets/images/red-right-arrow.png">
+                        </a>
+                    </li>
+                    <li class="home-link">
+                        <a (click)="this.navigationService.navigateToAdminHome()">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,140 @@
+<div class="wrapper">
+    <div id="body" class="active">
+        <div class="content bg-white">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <a [routerLink]="['/', appRoutes.APP_HOME]">
+                            <img class="img-fluid mx-auto d-block col-md-7" src="assets/images/new-smz-logo.png"> 
+                        </a>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="home-icon">
+                            <a (click)="goBack()" class="icon" title="Back">  <img src="assets/images/red-left-arrow.png"> </a>
+                          <!--  <a [routerLink]="['/', appRoutes.APP_HOME]" class="icon" href="index.html" title="home"> <i
+                                    class="fas fa-home fs-5"></i> </a>-->
+                                    <a  class="icon">&nbsp;<img src="assets/images/red-right-arrow.png"> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="content">
+            <div class="container" style="margin-top:30px;">
+                <div class="row">
+                    <div class="col-md-4">
+                       
+                        <div class="services">
+                            <div class="loginpage service-item position-relative pt-5">
+                                <div class="icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="stretched-link">
+                                    <p>Please Log In With Your Credentials And
+                                        <strong> One Time PASSWORD (OTP) </strong> As Provided In Your Mail
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-6">
+                        <div class="services pt-3 mb-3">
+                            <button (click)="navigateToRegister()" type="submit" class="new-account-but">
+                                DON'T Have An Account? <br> REGISTER FIRST</button>
+                        </div>
+                        <div *ngIf="isError" class="col-md-12 mt-3">
+                            <div class="alert alert-danger text-center">{{ errorMessage }}</div>
+                        </div>
+                        <div class="login-div aos-init aos-animate mt-2" data-aos="fade-up" data-aos-delay="200">
+                            <div class="login-div-header">
+                                <span> <small> Registered </small> <strong> ACCOUNT HOLDERS </strong> <small>
+                                        Pls</small>
+                                    <strong>LOG-IN</strong> <small> Here </small> </span>
+                            </div>
+                            <form [formGroup]="loginForm" (submit)="isLoginSuccess?onOtpVerificationSubmit():onSubmit()"
+                                class="row login-div-body gy-2">
+                                <div class="col-md-12">
+                                    <label for="email-field" class="pb-2">Full Name</label>
+                                    <input type="text" id="username" formControlName="username" class="form-control"
+                                        placeholder="" />
+                                    <div *ngIf="formSubmitted && f['username'].invalid" class="text-danger">
+                                        <small *ngIf="f['username'].errors?.['required']">username is
+                                            required.</small>
+                                        <small *ngIf="f['username'].errors?.['minlength']">Min 3 characters.</small>
+                                        <small *ngIf="f['username'].errors?.['pattern']">Only letters and spaces
+                                            allowed.</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="email-field" class="pb-2">Email Address </label>
+                                    <input type="email" id="emailAddress" formControlName="email" class="form-control"
+                                        placeholder="" />
+                                    <div *ngIf="formSubmitted && f['email'].invalid" class="text-danger">
+                                        <small *ngIf="f['email'].errors?.['required']">Email is
+                                            required.</small>
+                                        <small *ngIf="f['email'].errors?.['email']">Enter a valid
+                                            email.</small>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="subject-field" class="pb-2">Password</label>
+                                    <input type="password" id="password" formControlName="password" class="form-control"
+                                        placeholder="" />
+                                    <div *ngIf="formSubmitted && f['password'].invalid" class="text-danger">
+                                        <small *ngIf="f['password'].errors?.['required']">Password is
+                                            required.</small>
+                                        <small *ngIf="f['password'].errors?.['minlength']">Min 6 characters.</small>
+                                        <small *ngIf="f['password'].errors?.['pattern']">Include uppercase,
+                                            lowercase, number, and symbol.</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="name-field" class="pb-2">Phone Number</label>
+                                    <input type="text" id="mobileNo" formControlName="mobileNo" class="form-control"
+                                        placeholder="" />
+                                    <div *ngIf="formSubmitted && f['mobileNo'].invalid" class="text-danger">
+                                        <small *ngIf="f['mobileNo'].errors?.['required']">Mobile number is
+                                            required.</small>
+                                        <small *ngIf="f['mobileNo'].errors?.['pattern']">Invalid Mobile Number</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4" *ngIf="isLoginSuccess">
+                                    <label for="name-field" class="otp">OTP</label>
+                                    <input #otpInput type="text" name="otp" id="otp" class="form-control" placeholder=""
+                                        formControlName="otp">
+                                    <div *ngIf="formSubmitted && f['otp'].invalid" class="text-danger">
+                                        <small *ngIf="f['otp'].errors?.['required']">OTP is
+                                            required.</small>
+                                        <small *ngIf="f['otp'].errors?.['minlength']">Invalid OTP</small>
+                                        <small *ngIf="f['otp'].errors?.['maxlength']">Invalid OTP</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mt-4">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="submit-btn">
+                                                {{this.isLoginSuccess?'Verify OTP':'Submit to Login'}}
+                                            </button>
+                                        </div>
+                                        <div class="col-md-12 mt-2">
+                                            <button (click)="navigateToForgotPassword()" type="button"
+                                                class="new-account-but">FORGOT PASSWORD</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-popup-modal [show]="showLoginSuccessModel" [title]="'Welcome '+ f['username'].value" [buttonText]="'Ok'"
+    (ClosePopup)="this.loginSuccessModalClose()">
+    <p><span style="color:green">OTP Sent Successfully</span></p>
+    <p>An OTP has been sent to your registered email address. Please enter the OTP in the login form to verify your
+        identity and continue.</p>
+</app-popup-modal>

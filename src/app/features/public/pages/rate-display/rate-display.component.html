@@ -1,0 +1,111 @@
+<div class="wrapper">
+    <div id="body" class="active">
+        <div class="content bg-white">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="nettt-logo">
+                            <a [routerLink]="['/', appRoutes.APP_HOME]">
+                                <img class="img-fluid" src="assets/images/new-smz-logo.png"> </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-8">
+                        <a [routerLink]="['/', appRoutes.APP_HOME]">
+                            <button class="transact-btn"> To Transact For Cash Exchange Buying And Selling Pls Click
+                                Here Or Below
+                                At Transact </button>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-4">
+                        <div class="home-icon float-right">
+                            <a class="icon" (click)="goBack()" title="Back">
+                                <img src="assets/images/red-left-arrow.png">
+                            </a>
+                            <a [routerLink]="['/', appRoutes.APP_HOME]" class="icon" title="home">
+                                &nbsp;<img src="assets/images/home-icon.png">
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="container-fluid mt-3">
+                <div class="col-md-12 col-lg-12">
+                    <!-- Error Message -->
+                    <div *ngIf="hasError" class="error-box">
+                        <p>❌ Unable to load exchange rates. Please try again later.</p>
+                        <button (click)="retry()">Retry</button>
+                    </div>
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item rate-tab-style col-md-4 rate-tab-ce" role="presentation">
+                            <div class="list-middle-align">
+                                <a class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" href="#pills-home"
+                                    role="tab" aria-controls="pills-home" aria-selected="true">CASH EXCHANGE RATES –
+                                    Click
+                                    Here
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item rate-tab-style rate-tab-rsr col-md-4" role="presentation">
+                            <a class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" href="#pills-profile"
+                                role="tab" aria-controls="pills-profile" aria-selected="false" tabindex="-1">Remittance
+                                & Settlement Rates -
+                                Click Here </a>
+                        </li>
+                        <li class="nav-item rate-tab-style rate-tab-tc col-md-4" role="presentation">
+                            <a class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" href="#pills-contact"
+                                role="tab" aria-controls="pills-contact" aria-selected="false" tabindex="-1">Travel Card
+                                - Click Here </a>
+                        </li>
+                    </ul>
+                    <div class="card">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade active show" id="pills-home" role="tabpanel"
+                                aria-labelledby="pills-home-tab">
+                                <div class="rate-table table-responsive">
+                                    <div class="" id="exchange-table" style="width: 100%; height: 100%;">
+                                        <ag-grid-angular [theme]="theme" [rowData]="cashRates"
+                                            [columnDefs]="cashColumnDefs" [defaultColDef]="defaultColDef"
+                                            domLayout="autoHeight" [overlayLoadingTemplate]="overlayLoadingTemplate"
+                                            [overlayNoRowsTemplate]="overlayNoRowsTemplate"
+                                            (gridReady)="onCashGridReady($event)" [suppressCellFocus]="true">
+                                            <!-- suppressCellSelection -->
+                                        </ag-grid-angular>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                aria-labelledby="pills-profile-tab">
+                                <div class="rate-table table-responsive">
+                                    <div class="ag-theme-alpine" id="exchange-table" style="width: 100%; height: 100%;">
+                                        <ag-grid-angular [theme]="theme" [rowData]="remittanceRates"
+                                            [columnDefs]="remittanceColumnDefs" [defaultColDef]="defaultColDef"
+                                            domLayout="autoHeight" [overlayLoadingTemplate]="overlayLoadingTemplate"
+                                            [overlayNoRowsTemplate]="overlayNoRowsTemplate"
+                                            (gridReady)="onRemittanceGridReady($event)">
+                                        </ag-grid-angular>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                aria-labelledby="pills-contact-tab">
+                                <div class="rate-table table-responsive">
+                                    <div class="ag-theme-alpine" id="exchange-table" style="width: 100%; height: 100%;">
+                                        <ag-grid-angular [theme]="theme" [rowData]="travelCardRates"
+                                            [columnDefs]="travelCardColumnDefs" [defaultColDef]="defaultColDef"
+                                            domLayout="autoHeight" [overlayLoadingTemplate]="overlayLoadingTemplate"
+                                            [overlayNoRowsTemplate]="overlayNoRowsTemplate"
+                                            (gridReady)="onTravelCardGridReady($event)">
+                                        </ag-grid-angular>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

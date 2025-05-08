@@ -1,0 +1,154 @@
+<div class="wrapper">
+    <div id="body" class="active">
+        <div class="content bg-white">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <a [routerLink]="['/', appRoutes.APP_HOME]">
+                            <img class="img-fluid mx-auto d-block col-md-7" src="assets/images/new-smz-logo.png">  
+                        </a>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="home-icon">
+                            <a class="icon" (click)="goBack()" title="Back">
+                                <img src="assets/images/red-left-arrow.png">  
+                            </a>
+                            <a [routerLink]="['/', appRoutes.APP_HOME]" class="icon" title="home">
+                                &nbsp;<img src="assets/images/red-right-arrow.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="container" style="margin-top:30px;">
+                <div class="row">
+                    <div class="col-md-5">
+                      
+                        <div class="services">
+                            <div class="loginpage service-item position-relative pt-5">
+                                <div class="icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="stretched-link">
+                                    <p> <strong> NB - Pls Check Your E-mail And Link On Registering </strong> NB - Pls
+                                        Check Your &nbsp; E-mail And Link On Registering to view rates and book ; Please
+                                        note that on booking, time is limited to only 30 Mins for collection of tangible
+                                        monies by proving ID and Transaction slip and no . Currently all transactions
+                                        are cash to cash base .
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2"> </div>
+                    <div class="col-md-5">
+                        <div class="services pt-3 mb-3">
+                            <button (click)="navigateToLogin()" type="button" class="new-account-but">
+                                If You Have Registered Pls Click & <br> SIGN-IN Here TO TRANSACT
+                            </button>
+                        </div>
+                        <!-- Error -->
+                        <div *ngIf="isError" class="col-md-12 mt-3">
+                            <div class="alert alert-danger text-center">{{ errorMessage }}</div>
+                        </div>
+                        <div class="login-div aos-init aos-animate mt-2" data-aos="fade-up" data-aos-delay="200">
+                            <div class="login-div-header">
+                                <span> <small> New </small> <strong> REGISTRATION </strong>
+                                    <small> Here </small> </span>
+                            </div>
+                            <form class="row login-div-body gy-2" [formGroup]="registerForm" (submit)="onSubmit()">
+                                <div class="col-md-12">
+                                    <label for="email-field" class="pb-2">Full Name</label>
+                                    <input type="text" id="username" formControlName="username" class="form-control"
+                                        placeholder="" />
+                                    <div *ngIf="formSubmitted && f['username'].invalid" class="text-danger">
+                                        <small *ngIf="f['username'].errors?.['required']">username is
+                                            required.</small>
+                                        <small *ngIf="f['username'].errors?.['minlength']">Min 3 characters.</small>
+                                        <small *ngIf="f['username'].errors?.['pattern']">Only letters, numbers and
+                                            ._{{'@'}}
+                                            allowed.</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="email-field" class="pb-2">Email Address </label>
+                                    <input type="email" id="emailAddress" formControlName="email" class="form-control"
+                                        placeholder="" />
+                                    <div *ngIf="formSubmitted && f['email'].invalid" class="text-danger">
+                                        <small *ngIf="f['email'].errors?.['required']">Email is
+                                            required.</small>
+                                        <small *ngIf="f['email'].errors?.['email']">Enter a valid
+                                            email.</small>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="name-field" class="pb-2">Phone Number</label>
+                                    <input type="text" id="mobileNo" formControlName="mobileNo" class="form-control"
+                                        placeholder="" />
+                                    <div *ngIf="formSubmitted && f['mobileNo'].invalid" class="text-danger">
+                                        <small *ngIf="f['mobileNo'].errors?.['required']">Mobile number is
+                                            required.</small>
+                                        <small *ngIf="f['mobileNo'].errors?.['pattern']">Must be exactly 10
+                                            digits.</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="nationality" class="pb-2">Select Nationality</label>
+                                    <select id="nationality" formControlName="nationality" class="form-control">
+                                        <option value="">Select Nationality</option>
+                                        <option *ngFor="let country of CountryList" [value]="country.countryName">
+                                            {{country.countryName}}</option>
+                                    </select>
+                                    <div *ngIf="formSubmitted && f['nationality'].invalid" class="text-danger">
+                                        <small *ngIf="f['nationality'].errors?.['required']">Nationality is
+                                            required.</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="subject-field" class="pb-2">Password</label>
+                                    <input type="password" id="password" formControlName="password" class="form-control"
+                                        placeholder="" />
+                                    <div *ngIf="formSubmitted && f['password'].invalid" class="text-danger">
+                                        <small *ngIf="f['password'].errors?.['required']">Password is
+                                            required.</small>
+                                        <small *ngIf="f['password'].errors?.['minlength']">Min 6 characters.</small>
+                                        <small *ngIf="f['password'].errors?.['pattern']">Include uppercase,
+                                            lowercase, number, and symbol.</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="subject-field" class="pb-2">Re-Enter Password</label>
+                                    <input type="password" id="confirm-password" formControlName="confirmPassword"
+                                        class="form-control" placeholder="" />
+                                    <div *ngIf="formSubmitted && f['confirmPassword'].invalid" class="text-danger">
+                                        <small *ngIf="f['confirmPassword'].errors?.['required']">Confirm Password is
+                                            required.</small>
+                                        <small *ngIf="f['confirmPassword'].errors?.['mismatch']">Passwords do not
+                                            match.</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mt-4">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="submit-btn">Submit to Registration</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-popup-modal [show]="showSuccessModel" [title]="'Hi ' + f['username'].value" [buttonText]="'Ok'"
+    (ClosePopup)="this.loginSuccessModalClose()">
+    <p><span style="color:green">Registration Successful!</span></p>
+    <p>Thank you for registering. A confirmation link has been sent to your email address. Please check your inbox and
+        follow the link to verify your account.</p>
+</app-popup-modal>
