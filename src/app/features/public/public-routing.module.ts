@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: AppRoutes.APP_ABOUT_US, component: AboutComponent },
   { path: AppRoutes.APP_ABOUT_US, component: ContactUsComponent },
   { path: AppRoutes.APP_EXCHANGE_RATES, component: RateDisplayComponent },
-  { path: AppRoutes.APP, component: HomeComponent },
+  { path: AppRoutes.APP, redirectTo: `/${AppRoutes.ADMIN}/${AppRoutes.ADMIN_DASHBOARD}`, pathMatch: 'full' }
+  // { path: AppRoutes.APP, component: HomeComponent },
   // { path: "**", redirectTo: AppRoutes.APP_HOME }
 ]
 
